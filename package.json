@@ -23,6 +23,9 @@
     "type": "git",
     "url": "https://github.com/adobe/plugin-on-fetch"
   },
+  "bugs": {
+     "url": "https://github.com/adobe/plugin-on-fetch/issues"
+  },
   "author": "Adobe Inc.",
   "license": "Apache-2.0"
 }

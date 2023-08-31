@@ -4,5 +4,8 @@ node_modules
 # Exclude yarn.lock
 yarn.lock
 
+# Exclude yarn.lock
+package-lock.json
+
 # Exclude .npmrc file
 .npmrc

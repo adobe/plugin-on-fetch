@@ -15,7 +15,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
+      - name: Install dependencies
+        run: npm install
       - name: Publish if version has been updated
         uses: JS-DevTools/npm-publish@v1
         with:

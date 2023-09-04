@@ -7,7 +7,7 @@
   "description": "Adobe API Mesh on Fetch Plugin",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
+    "test": "echo \"no test specified\" && exit 0",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },

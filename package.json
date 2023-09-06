@@ -2,29 +2,32 @@
   "name": "@adobe/plugin-on-fetch",
   "version": "0.1.0",
   "publishConfig": {
-		"access": "public"
-	},
+    "access": "public"
+  },
   "description": "Adobe API Mesh on Fetch Plugin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"no test specified\" && exit 0",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {},
   "devDependencies": {
     "@envelop/core": "^3.0.4",
     "eslint": "^8.31.0",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "jest": "^29.6.4"
   },
   "peerDependencies": {
-    "graphql": "^16.6.0",
-    "@envelop/core": "*"
+    "@envelop/core": "*",
+    "graphql": "^16.6.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/adobe/plugin-on-fetch"
   },
   "bugs": {
-     "url": "https://github.com/adobe/plugin-on-fetch/issues"
+    "url": "https://github.com/adobe/plugin-on-fetch/issues"
   },
   "author": "Adobe Inc.",
   "license": "Apache-2.0"

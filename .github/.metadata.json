@@ -1,0 +1,25 @@
+{
+    "templateVersion": "0.2",
+    "product": {
+        "name": "API Mesh",
+        "description": "Plugin on fetch. The On Fetch Plugin will run custom JS per source on right before fetching."
+    },
+    "contacts": {
+        "team": {
+            "name": "Star-Griffins",
+            "DL": "Grp-Star-Griffins",
+            "slackChannel": "star-griffins"
+        }
+    },
+    "ticketTracker": {
+        "functionalJiraQueue": {
+            "projectKey": "CEXT",
+            "component": ""
+        },
+        "securityJiraQueue": {
+            "projectKey": "MAGREQ",
+            "component": "MAGREQ/Magento Extensibility"
+        }
+    },
+    "productionCodeBranches": ["main"]
+} 

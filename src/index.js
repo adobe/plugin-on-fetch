@@ -10,8 +10,6 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-const path = require("path");
-
 async function onFetchPlugin(buildConfig) {
   try {
     const { baseDir } = buildConfig;
@@ -44,7 +42,8 @@ async function onFetchPlugin(buildConfig) {
           handlerFn = memoizedFns[sourceName];
         } else {
           try {
-            const maybeHandlerFn = require(path.resolve(baseDir, handler));
+            const handlerFilePath = `${baseDir}/${handler}`;
+            const maybeHandlerFn = await import(handlerFilePath);
 
             if (typeof maybeHandlerFn === "function") {
               handlerFn = maybeHandlerFn;

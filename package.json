@@ -1,6 +1,6 @@
 {
   "name": "@adobe/plugin-on-fetch",
-  "version": "0.1.1-alpha",
+  "version": "0.1.1",
   "publishConfig": {
     "access": "public"
   },

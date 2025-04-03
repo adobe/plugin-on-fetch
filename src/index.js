@@ -35,15 +35,22 @@ async function onFetchPlugin(buildConfig) {
 
         const sourceName = executionConfig.info.sourceName;
 
-        const { handler } = onFetchConfig[executionConfig.info.sourceName];
         let handlerFn = null;
 
         if (memoizedFns[sourceName]) {
           handlerFn = memoizedFns[sourceName];
         } else {
           try {
-            const handlerFilePath = `${baseDir}/${handler}`;
-            const maybeHandlerFn = await import(handlerFilePath);
+            const { handler, module } = onFetchConfig[executionConfig.info.sourceName];
+            let maybeHandlerFn;
+            if (module) {
+              // Use imported module
+              maybeHandlerFn = module;
+            } else {
+              // Resolve handler function dynamically
+              const handlerFilePath = `${baseDir}/${handler}`;
+              maybeHandlerFn = await import(handlerFilePath);
+            }
 
             if (typeof maybeHandlerFn === "function") {
               handlerFn = maybeHandlerFn;

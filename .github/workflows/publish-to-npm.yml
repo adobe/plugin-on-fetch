@@ -18,7 +18,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Publish if version has been updated
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v4
         with:
           access: "public"
+          provenance: true
           token: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}

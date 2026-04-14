@@ -9,6 +9,9 @@ jobs:
     name: npm-publish
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js

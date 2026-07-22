@@ -9,6 +9,9 @@ jobs:
     name: npm-publish
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
@@ -18,7 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Publish if version has been updated
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v4
         with:
           access: "public"
+          provenance: true
           token: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}
